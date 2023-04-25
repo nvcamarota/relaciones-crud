@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+figure {
+  width: 20%;
+}
+
+.titulo {
+  text-align: center;
+}
+
+.agregar,
+.modificar {
+  color: #FFFFFF;
+  background-color: green;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.borrar {
+  color: #FFFFFF;
+  background-color: red;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.volver {
+  color: #FFFFFF;
+  background-color: #00B7FF;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.editar, .actualizar {
+  color: #FFFFFF;
+  background-color: #7b58dd;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.buttons {
+  color: #FFFFFF;
+}
+
+.formulario {
+  margin: auto;
+  width: 20%;
+}

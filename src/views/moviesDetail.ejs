@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= movie.title %>
+    </title>
+    <link rel='stylesheet' href='/css/style.css' />
+
+</head>
+
+<body>
+    <figure>
+        <a href="/"><img src="/img/logo-DH.png" alt="Logo Digital House"></a>
+    </figure>
+    <h1>
+        <%= movie.title %>
+    </h1>
+    <br>
+    <p>RATING: <%= movie.rating %>
+    </p>
+    <p>AWARDS: <%= movie.awards %>
+    </p>
+    <p>LENGTH: <%= movie.length + ' min' %>
+    </p>
+    <p>RELEASE DATE: <%= movie.release_date %>
+    </p>
+    <% if (movie.genre) { %>
+        <p>Género:
+        <h3><a href="/genres/detail/<%= movie.genre.id %>">
+                <%= movie.genre.name %>
+            </a></h3>
+        </p>
+        <% } else { %>
+            <p>Sin especificar</p>
+            <% } %>
+                <br>
+                <hr>
+                <h4>Actores</h4>
+                <ul>
+                    <% movie.actors.forEach(actor=> { %>
+                        <li><a href="/actors/detail/<%= actor.id %>"><b>
+                                    <%= actor.first_name %>
+                                        <%= actor.last_name %>
+                                </b></a></li>
+                        <% }) %>
+                </ul>
+                <br>
+                <section>
+                    <!--Aquí debe colocar los botones de Modificar - Borrar y Listado de Películas-->
+                    <button class="editar" type="submit"><a class="buttons"
+                            href="/movies/edit/<%= movie.id %>">Editar</a></button>
+                    <button class="borrar" type="submit"><a class="buttons"
+                            href="/movies/delete/<%= movie.id %>">Eliminar</a></button>
+                    <button class="agregar" type="submit"><a class="buttons"
+                            href="/movies/add">Agregar</a></button>
+                    <button class="volver" type="submit"><a class="buttons" href="/movies">Lista de
+                            películas</a></button>
+                </section>
+
+</body>
+
+</html>
